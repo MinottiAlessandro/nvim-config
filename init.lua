@@ -91,6 +91,15 @@ keymap.set("n", "N", "Nzzzv")
 keymap.set("n", "<leader>w", "<cmd>w<CR>", { desc = "Save file" })
 keymap.set("n", "<leader>q", "<cmd>q<CR>", { desc = "Quit" })
 keymap.set("n", "<leader>Q", "<cmd>qa!<CR>", { desc = "Quit all" })
+vim.keymap.set("v", "<leader>sl",
+  ":!awk '{ print length, $0 }' | sort -n | cut -d\" \" -f2-<CR>",
+  { desc = "Sort lines by length (short to long)" }
+)
+vim.keymap.set("v", "<leader>sL",
+  ":!awk '{ print length, $0 }' | sort -nr | cut -d\" \" -f2-<CR>",
+  { desc = "Sort lines by length (long to short)" }
+)
+
 
 -- ============================================================================
 -- BOOTSTRAP LAZY.NVIM
