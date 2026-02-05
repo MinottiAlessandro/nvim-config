@@ -72,6 +72,7 @@ keymap.set("n", "<C-Right>", "<cmd>vertical resize +2<CR>", { desc = "Increase w
 keymap.set("n", "<S-h>", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
 keymap.set("n", "<S-l>", "<cmd>bnext<CR>", { desc = "Next buffer" })
 keymap.set("n", "<leader>bd", "<cmd>bdelete<CR>", { desc = "Delete buffer" })
+keymap.set("n", "<leader>z", ":ZenMode<CR>", { desc = "Toggle Zen Mode" })
 
 -- Move lines in visual mode
 keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move line down" })
@@ -458,6 +459,14 @@ require("lazy").setup({
           -- your configuration comes here
           -- or leave it empty to use the default settings
           -- refer to the configuration section below
+        }
+    },
+    {
+        "folke/zen-mode.nvim",
+        opts = {
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
         }
     }
 })
